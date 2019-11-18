@@ -1,0 +1,11 @@
+{
+  "name": "sass-css-modules-class-mapper",
+  "version": "1.0.0",
+  "description": "Maps CSS classes to JS classes that use CSS Modules while preserving CSS classes that don't use CSS Modules EX: fontawesome",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "kfluckiger",
+  "license": "ISC"
+}
