@@ -6,19 +6,20 @@
 <li>Preserves SASS/CSS classes that might be globally applied through other SASS/CSS files. EX: FontAwesome</li>
 <li>Easy to use</li>
 </ul>
-<br/>
+<br>
 <h1>How to use with React</h1>
+<br>
 <pre><code>
 npm i --save sass-css-modules-class-mapper
 </pre></code>
-<br/>
-<pre><code>
-import React, {Component} from 'react';
+
+```javascript
+import React, {Component} from "react";
 import ClassMapper from 'sass-css-modules-class-mapper';
 
-import styles from "./container.module.css";
+import styles from './icon.module.css';
 
-class Container extends Component {
+class Icon extends Component {
 
   constructor(props) {
     super(props);
@@ -26,45 +27,48 @@ class Container extends Component {
   }
 
   render() {
+    return (<span>
+      <i className={this.variant}></i>
+    </span>)
+  }
+}
+
+export default Icon;
+```
+
+<h1>icon.module.css</h1>
+<br>
+
+```css
+.red {
+  color: red;
+}
+```
+
+<br>
+<h1>App.js</h1>
+<br>
+
+```javascript
+import React, {Component} from 'react';
+
+import Icon from '../icon';
+
+class App extends Component {
+
+  render() {
     return (
-      <div className={this.variant}>
-      </div>
+      <div><Icon variant="red fas fa-home"/></div>
     )
   }
 }
 
-export default Container;
-</pre></code>
+export default App;
 
-<h1>container.module.css</h1>
-<pre><code>
-.main-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.red {
-  background-color: red;
-}
-</pre></code>
-<br/>
-<h1>App.js</h1>
-<br/>
-<pre><code>
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import Container from './components/container';
-
-
-ReactDOM.render(<Container variant="main-container red" />, document.getElementById('root'));
-
-</pre></code>
+```
 
 <h1>Rendered in browser</h1>
-<pre><code>
-<div class="container_main-container__363Io container_red__2Sb2-"></div>
-</pre></code>
+
+```html
+<i class="icon_red__m8-68 fas fa-home"></i>
+```

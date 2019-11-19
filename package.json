@@ -1,6 +1,6 @@
 {
   "name": "sass-css-modules-class-mapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Maps CSS classes to JS classes that use CSS Modules while preserving CSS classes that don't use CSS Modules EX: fontawesome",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer-core": "^5.1.11",
-    "babel-core": "^5.2.17",
-    "babel-loader": "^5.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "css-loader": "^0.15.1",
     "react": "^16.12.0",
     "style-loader": "^0.12.3",
-    "webpack": "^1.9.10"
+    "webpack": "^4.41.2"
   }
 }
