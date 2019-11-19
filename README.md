@@ -8,11 +8,11 @@
 </ul>
 <br/>
 <h1>How to use with React</h1>
-```
+<pre><code>
 npm i --save sass-css-modules-class-mapper
-```
+</pre></code>
 <br/>
-```
+<pre><code>
 import React, {Component} from 'react';
 import ClassMapper from 'sass-css-modules-class-mapper';
 
@@ -34,10 +34,10 @@ class Container extends Component {
 }
 
 export default Container;
-```
+</pre></code>
 
 <h1>container.module.css</h1>
-```
+<pre><code>
 .main-container {
   position: fixed;
   width: 100%;
@@ -49,11 +49,11 @@ export default Container;
 .red {
   background-color: red;
 }
-```
+</pre></code>
 <br/>
 <h1>App.js</h1>
 <br/>
-```
+<pre><code>
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -62,9 +62,9 @@ import Container from './components/container';
 
 ReactDOM.render(<Container variant="main-container red" />, document.getElementById('root'));
 
-```
+</pre></code>
 
 <h1>Rendered in browser</h1>
-```
+<pre><code>
 <div class="container_main-container__363Io container_red__2Sb2-"></div>
-```
+</pre></code>
