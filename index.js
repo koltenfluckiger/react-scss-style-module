@@ -2,14 +2,17 @@
 
 exports.map = (styles, classNames) => {
 
-  if ((Object.keys(styles).length < 1) || classNames.length < 1) {
-    return new Error("Styles or Class Names is empty. Please check these and try again.")
+  if (Object.keys(styles).length < 1) {
+    // new Error("Styles is empty. Please check this and try again.");
+    return "";
   };
   if (styles.constructor != Object) {
-    return new Error('Styles is not of an object type. Pass in the styles object from the import. EX: import styles from "./container.module.css";')
+    //new Error('Styles is not of an object type. Pass in the styles object from the import. EX: import styles from "./container.module.css";')
+    return "";
   };
   if ((typeof(classNames) != "string") && (typeof(classNames) != "array")) {
-    return new Error('Class Names is not of an string type or array. Type: ' + typeof(classNames) + '. Pass in the class names in string or array format. EX: (styles, "container red visible") or (styles, ["container", "red", "visible"]);')
+    // new Error('Class Names is not of an string type or array. Type: ' + typeof(classNames) + '. Pass in the class names in string or array format. EX: (styles, "container red visible") or (styles, ["container", "red", "visible"]);')
+    return "";
   };
 
   const classNamesArray = typeof(classNames) === "string"
