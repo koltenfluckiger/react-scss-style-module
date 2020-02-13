@@ -1,17 +1,17 @@
 'use strict';
 
-exports.map = (styles, options) => {
+exports.map = (styles, options = {
+  names: [],
+  default: ""
+}) => {
   const names = typeof(options.names) === "string"
     ? options.names.split(" ")
-    : options.names;
-
-  const classes = names.map(css => {
+    : [];
+  return Object.values(names).map(css => {
     if (styles[css]) {
-      return styles[css]
+      return styles[css];
     } else {
       return css;
     }
-  });
-  classes.push(options.default);
-  return classes.join(" ");
+  }).concat(styles[options.default]).join(" ");
 };

@@ -23,7 +23,7 @@ class Icon extends Component {
 
   constructor(props) {
     super(props);
-    this.variant = ClassMapper.map(styles, props.variant);
+    this.variant = ClassMapper.map(styles, {names: props.variant});
   }
 
   render() {
@@ -35,6 +35,29 @@ class Icon extends Component {
 
 export default Icon;
 ```
+```javascript
+import React, {Component} from "react";
+import ClassMapper from 'sass-css-modules-class-mapper';
+
+import styles from './icon.module.css';
+
+class Icon extends Component {
+
+  constructor(props) {
+    super(props);
+    this.variant = ClassMapper.map(styles, {default: "rounded-icon"});
+  }
+
+  render() {
+    return (<span>
+      <i className={this.variant}></i>
+    </span>)
+  }
+}
+
+export default Icon;
+```
+
 
 <h1>icon.module.css</h1>
 <br>
@@ -71,4 +94,28 @@ export default App;
 
 ```html
 <i class="icon_red__m8-68 fas fa-home"></i>
+```
+
+```javascript
+import React, {Component} from 'react';
+
+import Icon from '../icon';
+
+class App extends Component {
+
+  render() {
+    return (
+      <div><Icon/></div>
+    )
+  }
+}
+
+export default App;
+
+```
+
+<h1>Rendered in browser</h1>
+
+```html
+<i class="icon_rounded-corner__m8-68"></i>
 ```
