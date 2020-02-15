@@ -38,7 +38,7 @@ export default new class ClassMapper {
     return style;
   }
 
-  map(styles, options) {
+  map(styles, options = {names: undefined, defaults: undefined, events:undefined}) {
     var names = options.names
       ? options.names.split(" ")
       : undefined;
