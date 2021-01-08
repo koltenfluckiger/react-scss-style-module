@@ -38,9 +38,17 @@ export default new class ClassMapper {
     return style;
   }
 
-  map(styles, options = {names: undefined, defaults: undefined, events:undefined}) {
-    var names = options.names
-      ? options.names.split(" ")
+  map(styles, options = {
+    classes: undefined,
+    defaults: undefined,
+    events: undefined
+  }) {
+    if ((options.classes === undefined) && (options.defaults === undefined) && (options.events === undefined)) {
+      console.log("MODULES: sass-css-modules-class-mapper\n Classes, defaults, and events were not specified. Please make sure to properly pass in the object like so.\nClassMapper.map(styles, {classes: props.variant})");
+      return
+    }
+    var classes = options.classes
+      ? options.classes.split(" ")
       : undefined;
     var defaults = options.defaults
       ? options.defaults.split(" ")
@@ -48,8 +56,9 @@ export default new class ClassMapper {
     var events = options.events
       ? options.events
       : undefined;
-    names = this.attach(styles, names)
-      ? this.attach(styles, names)
+
+    classes = this.attach(styles, classes)
+      ? this.attach(styles, classes)
       : [];
     defaults = this.attach(styles, defaults)
       ? this.attach(styles, defaults)
@@ -58,10 +67,7 @@ export default new class ClassMapper {
       ? this.attachEvents(styles, events)
       : [];
 
-    if ((names.length === 0) && (defaults.length === 0) && (events.length === 0)) {
-      return
-    }
-    const results = [].concat(names, defaults, events);
+    const results = [].concat(classes, defaults, events);
     return results.join(" ");
   }
 }();
