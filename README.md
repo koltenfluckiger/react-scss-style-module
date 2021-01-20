@@ -23,7 +23,7 @@ class Icon extends Component {
 
   constructor(props) {
     super(props);
-    this.variant = ClassMapper.map(styles, {names: props.variant});
+    this.variant = ClassMapper.map(styles, {classes: props.variant});
   }
 
   render() {
@@ -45,7 +45,7 @@ class Icon extends Component {
 
   constructor(props) {
     super(props);
-    this.variant = ClassMapper.map(styles, {default: "rounded-icon"});
+    this.variant = ClassMapper.map(styles, {defaults: "rounded-icon"});
   }
 
   render() {
@@ -112,10 +112,4 @@ class App extends Component {
 
 export default App;
 
-```
-
-<h1>Rendered in browser</h1>
-
-```html
-<i class="icon_rounded-corner__m8-68"></i>
 ```
