@@ -10,12 +10,12 @@
 <h1>How to use with React</h1>
 <br>
 <pre><code>
-npm i --save sass-css-modules-class-mapper
+npm i --save react-scss-style-module
 </pre></code>
 
 ```javascript
 import React, {Component} from "react";
-import Mapper from 'sass-css-modules-class-mapper';
+import ReactSCSS from 'react-scss-style-module';
 
 import styles from './icon.module.css';
 
@@ -23,7 +23,7 @@ class Icon extends Component {
 
   constructor(props) {
     super(props);
-    this.variant = Mapper.map(styles, {classes: props.variant});
+    this.variant = ReactSCSS.bind(styles, {classes: props.variant});
   }
 
   render() {
@@ -35,9 +35,10 @@ class Icon extends Component {
 
 export default Icon;
 ```
+
 ```javascript
 import React, {Component} from "react";
-import Mapper from 'sass-css-modules-class-mapper';
+import Mapper from 'react-scss-style-module';
 
 import styles from './icon.module.css';
 
@@ -45,7 +46,7 @@ class Icon extends Component {
 
   constructor(props) {
     super(props);
-    this.variant = Mapper.map(styles, {defaults: "rounded-icon"});
+    this.variant = ReactSCSS.bind(styles, {defaults: "rounded-icon"});
   }
 
   render() {
@@ -57,7 +58,6 @@ class Icon extends Component {
 
 export default Icon;
 ```
-
 
 <h1>icon.module.css</h1>
 <br>
