@@ -1,4 +1,4 @@
-# Sass CSS Class Mapper
+# React Sass/CSS Class Mapper
 
 <h1>Features</h1>
 <ul>
