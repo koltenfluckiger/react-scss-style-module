@@ -17,7 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
-    "noImplicitUseStrict": true,
     "ignoreDeprecations": "5.0"
   },
   "include": ["src/**/*.ts*", "src/index.ts*"],
